@@ -1,0 +1,56 @@
+Stampede notes
+Log in: ssh ksierrac@stampede.tacc.utexas.edu
+Validate-Master release – copy link location
+wget https://github.com/UNCW-iPlant/Validate-Master/archive/v0.9.tar.gz
+tar -xvf v0.9.tar.gz
+rm v0.9.tar.gz
+https://www.dropbox.com/s/fuq386044ck7odl/StampedeExample.zip
+unzip StampedeExample.zip
+module load python/2.7.9
+module save
+cd StampedeExample
+vim convert_job
+change to development (i for insert mode)
+python $HOME/StampedeExample/fam_pheno_convert.py -i $HOME/StampedeExample/one/1H6.fam
+sbatch convert_job.sh to submit job
+squeue –u ksierrac to see status
+more slurm-whatever.out to see result
+module load launcher
+module save
+vim paramlist
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc
+Close vim
+Ls $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc
+Cdh 
+Cd Validate-Master-0.9/CurrentReleaseStable/GWAS_09/
+Ls
+Chmod +x fastlmmc
+Ls
+Cdh
+Cd StampedeExample/
+Vim paramlist
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/one/1H6 –bfilesim $HOME/StampedeExample/one/1H6 –pheno $HOME/StampedeExample/one/1H6.fampheno.txt –out $HOME/StampedeExample/output/output1.txt (make eight of these)
+
+mkdir output
+vim winnow_job.sh
+ls make sure paramlist is in there
+sbatch -N 2 -n 4 $TACC_LAUNCHER_DIR/launcher.slurm
+	
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/one/1H6 –bfilesim $HOME/StampedeExample/one/1H6 –pheno $HOME/StampedeExample/one/1H6.fampheno.txt –out $HOME/StampedeExample/output/output1.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/two/2H6 –bfilesim $HOME/StampedeExample/two/2H6 –pheno $HOME/StampedeExample/two/2H6.fampheno.txt –out $HOME/StampedeExample/output/output2.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/three/3H6 –bfilesim $HOME/StampedeExample/three/3H6 –pheno $HOME/StampedeExample/three/3H6.fampheno.txt –out $HOME/StampedeExample/output/output3.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/four/4H6 –bfilesim $HOME/StampedeExample/four/4H6 –pheno $HOME/StampedeExample/four/4H6.fampheno.txt –out $HOME/StampedeExample/output/output4.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/five/5H6 –bfilesim $HOME/StampedeExample/five/5H6 –pheno $HOME/StampedeExample/five/5H6.fampheno.txt –out $HOME/StampedeExample/output/output5.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/six/6H6 –bfilesim $HOME/StampedeExample/six/6H6 –pheno $HOME/StampedeExample/six/6H6.fampheno.txt –out $HOME/StampedeExample/output/output6.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/seven/7H6 –bfilesim $HOME/StampedeExample/seven/7H6 –pheno $HOME/StampedeExample/seven/7H6.fampheno.txt –out $HOME/StampedeExample/output/output7.txt
+
+$HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc –bfile $HOME/StampedeExample/eight/8H6 –bfilesim $HOME/StampedeExample/eight/8H6 –pheno $HOME/StampedeExample/eight/8H6.fampheno.txt –out $HOME/StampedeExample/output/output8.txt
+
+

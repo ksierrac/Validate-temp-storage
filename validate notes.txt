@@ -1,0 +1,30 @@
+ssh ksierrac@stampede.tacc.utexas.edu
+"consumerKey": "C2ChT9f2hZ6aC9OyRxtonidT6Hka",
+"consumerSecret": "CC5p4JgTsL4XxEDugQUmP4mDPSYa",
+/work/04109/ksierrac
+
+
+unit tests:
+Winnow does not have: 
+load_kt: calls load_ote, does not need a separate test
+load_ote_betas: is called from load_ote, which already has a test
+
+performetrics: prevalence needs test (done)
+every method has a test method that needs 
+
+pegasus and make comparison
+parametric launcher
+installing tools
+
+echo "PATH=/$PATH:\$HOME/pegasus-4.6.1/bin" >> ~/.bashrc
+source ~/.bashrc
+
+trello - color coded, 6 cards per category, two people per card (developer and reviewer)
+Sphinx/readthedocs or Markdown
+Update LinkedIn and Github graphs
+
+small set of files ~50 for testing parametric launcher/makeflow
+figure out correct method for pulling large amount of files from data store into installed app
+
+Run small file set through Makeflow and Pegasus
+Get results and instructions together for tutorials

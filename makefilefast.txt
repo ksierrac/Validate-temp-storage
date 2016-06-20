@@ -1,0 +1,29 @@
+
+
+FAST = $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc
+
+output1.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/one/1H6.bed $HOME/StampedeExample/one/1H6.bim $HOME/StampedeExample/one/1H6.fam
+        $FAST -bfile $HOME/StampedeExample/one/1H6 -bfilesim $HOME/StampedeExample/one/1H6 -pheno $HOME/StampedeExample/one/1H6.fampheno.txt -out $HOME/makeflowtest/output/output1.txt
+
+output2.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/two/2H6.bed $HOME/StampedeExample/two/2H6.bim $HOME/StampedeExample/two/2H6.fam
+        $FAST -bfile $HOME/StampedeExample/two/2H6 -bfilesim $HOME/StampedeExample/two/2H6 -pheno $HOME/StampedeExample/two/2H6.fampheno.txt -out $HOME/makeflowtest/output/output2.txt
+		
+output3.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/three/3H6.bed $HOME/StampedeExample/three/3H6.bim $HOME/StampedeExample/three/3H6.fam
+        $FAST -bfile $HOME/StampedeExample/three/3H6 -bfilesim $HOME/StampedeExample/three/3H6 -pheno $HOME/StampedeExample/three/3H6.fampheno.txt -out $HOME/makeflowtest/output/output3.txt
+
+output4.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/four/4H6.bed $HOME/StampedeExample/four/4H6.bim $HOME/StampedeExample/four/4H6.fam
+        $FAST -bfile $HOME/StampedeExample/four/4H6 -bfilesim $HOME/StampedeExample/four/4H6 -pheno $HOME/StampedeExample/four/4H6.fampheno.txt -out $HOME/makeflowtest/output/output4.txt
+
+output5.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/five/5H6.bed $HOME/StampedeExample/five/5H6.bim $HOME/StampedeExample/five/5H6.fam
+        $FAST -bfile $HOME/StampedeExample/five/5H6 -bfilesim $HOME/StampedeExample/five/5H6 -pheno $HOME/StampedeExample/five/5H6.fampheno.txt -out $HOME/makeflowtest/output/output5.txt		
+		
+output6.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/six/6H6.bed $HOME/StampedeExample/six/6H6.bim $HOME/StampedeExample/six/6H6.fam
+        $FAST -bfile $HOME/StampedeExample/six/6H6 -bfilesim $HOME/StampedeExample/six/6H6 -pheno $HOME/StampedeExample/six/6H6.fampheno.txt -out $HOME/makeflowtest/output/output6.txt
+
+
+output7.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/seven/7H6.bed $HOME/StampedeExample/seven/7H6.bim $HOME/StampedeExample/seven/7H6.fam
+        $FAST -bfile $HOME/StampedeExample/seven/7H6 -bfilesim $HOME/StampedeExample/seven/7H6 -pheno $HOME/StampedeExample/seven/7H6.fampheno.txt -out $HOME/makeflowtest/output/output7.txt
+
+
+output8.txt: $HOME/Validate-Master-0.9/CurrentReleaseStable/GWAS_09/fastlmmc $HOME/StampedeExample/eight/8H6.bed $HOME/StampedeExample/eight/8H6.bim $HOME/StampedeExample/eight/8H6.fam
+        $FAST -bfile $HOME/StampedeExample/eight/8H6 -bfilesim $HOME/StampedeExample/eight/8H6 -pheno $HOME/StampedeExample/eight/8H6.fampheno.txt -out $HOME/makeflowtest/output/output8.txt

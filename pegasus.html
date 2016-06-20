@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pegasus and Makeflow on Stampede &mdash; Stapleton Lab Orientation Manual 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Stapleton Lab Orientation Manual 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Metacognition" href="metacog.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pegasus-and-makeflow-on-stampede">
+<h1>Pegasus and Makeflow on Stampede<a class="headerlink" href="#pegasus-and-makeflow-on-stampede" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="instructions-to-install-makeflow-from-tar-file">
+<h2>Instructions to install Makeflow from tar file:<a class="headerlink" href="#instructions-to-install-makeflow-from-tar-file" title="Permalink to this headline">¶</a></h2>
+<p>From the console:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$HOME</span>
+$ wget http://ccl.cse.nd.edu/software/files/cctools-5.1.1-source.tar.gz
+$ tar xvzf cctools-5.1.1-source.tar.gz
+$ <span class="nb">cd</span> cctools-5.1.1-source
+$ ./configure
+$ make
+$ make install
+$ <span class="nb">cd</span> <span class="nv">$HOME</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;PATH=/</span><span class="nv">$PATH</span><span class="s2">:\$HOME/cctools-5.1.1/bin&quot;</span> &gt;&gt; ~/.bashrc
+$ <span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+</div>
+<div class="section" id="initial-configuration-of-makeflow">
+<h2>Initial configuration of Makeflow:<a class="headerlink" href="#initial-configuration-of-makeflow" title="Permalink to this headline">¶</a></h2>
+<p>Write a makefile defining all the rules of the workflow. Rules consist of a target followed by a colon and any dependencies, with commands on the next line after an indentation.</p>
+<div class="highlight-makeflow"><div class="highlight"><pre><span></span>output.txt: mysim.exe calib.data
+./mysim.exe -c calib.data -o output.txt
+</pre></div>
+</div>
+<p>Unlike Make, Makeflow scripts cannot contain “empty” rules such as clean. All rules must have dependencies strictly defined.</p>
+<p><em>Note: Makeflow Makefiles use different syntax than Make Makefiles.</em></p>
+</div>
+<div class="section" id="to-run-a-job-through-slurm-with-makeflow">
+<h2>To run a job through SLURM with Makeflow:<a class="headerlink" href="#to-run-a-job-through-slurm-with-makeflow" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ makeflow -T slurm -B <span class="s2">&quot;-p normal -t 1&quot;</span> example.makeflow
+</pre></div>
+</div>
+<p>Parameter –B submits options to the batch system. SLURM requires parameter –p to specify which queue to submit through, and parameter –t to specify time allocated for the job to run. More arguments are available to be added between the quotes. More on arguments can be found in the manual (link included below).</p>
+</div>
+<div class="section" id="to-run-a-job-through-work-queue-with-makeflow">
+<h2>To run a job through Work Queue with Makeflow:<a class="headerlink" href="#to-run-a-job-through-work-queue-with-makeflow" title="Permalink to this headline">¶</a></h2>
+<p>1.Initialize work queue.</p>
+<p>Example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ makeflow -T wq -p <span class="m">0</span> -N PROJECT-<span class="nv">$USER</span> --work-queue-preferred-connection by_hostname example.makeflow
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Start workers:</li>
+</ol>
+<ol class="loweralpha simple">
+<li>For running locally:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ work_queue_worker -N PROJECT-<span class="nv">$USER</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>For batch using SLURM:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ slurm_submit_workers -N PROJECT-<span class="nv">$USER</span> -p <span class="s2">&quot;-t 1:00 -p normal&quot;</span> 2
+</pre></div>
+</div>
+<p>Again, reference Makeflow manual for more arguments.</p>
+</div>
+<div class="section" id="some-notes-on-makeflow-vs-pegasus">
+<h2>Some notes on Makeflow vs. Pegasus:<a class="headerlink" href="#some-notes-on-makeflow-vs-pegasus" title="Permalink to this headline">¶</a></h2>
+<p>Makeflow has an advantage over Pegasus in that for a user experienced with workflows it can be initially easier to learn. It is built on 40-year-old traditional Make, so many users already familiar with Make should find the transition to Makeflow fairly smooth. Makeflow still uses Makefiles, with the main difference being that it does not rely on a distributed file system. Instead, it uses the dependency information included in the Makefile to send data to remote jobs. Because of this,
+users must be careful in writing Makefiles to set up every dependency precisely, but once correctly written this ensures correct job execution and resource management.</p>
+<p>Makeflow documentation has good simple examples, but since it is built on Make, there is not extensive instruction on learning Makeflow. If a user is not already familiar with Make, they would need to start by learning Make and then learn the modifications for Makeflow. There is extensive documentation on Make (link available below). While Pegasus has extensive documentation and training examples, Makeflow training is adequate only if the user is familiar with Make.</p>
+<p>While Makeflow initial setup and learning is easier than Pegasus, it does not have as many helpful features as Pegasus. For example, it uses the Makefile log to recover after a failure and to record how and when every task is run, but does not support provenance queries as Pegasus does. However, Pegasus requires a lot more setup to run, so for simpler jobs or users accustomed to Make, Makeflow is likely a better choice.</p>
+</div>
+<div class="section" id="useful-links">
+<h2>Useful links:<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://ccl.cse.nd.edu/software/manuals/man/makeflow.html">Makeflow manual</a></li>
+<li><a class="reference external" href="https://www.gnu.org/software/make/manual/make.html">Make manual</a></li>
+<li><a class="reference external" href="http://dthain.blogspot.com/2009/07/make-as-abstraction-for-distributed.html">Summary of development of Makeflow</a></li>
+<li><a class="reference external" href="http://dthain.blogspot.com/2012/02/why-makeflow-works-for-new-users.html">An introduction to Makeflow by the developer</a></li>
+<li><a class="reference external" href="https://sites.google.com/site/xsedeworkflows/makeflow-tutorial#TOC-Running-Makeflow-in-Stampede">A Makeflow tutorial with example data</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Pegasus and Makeflow on Stampede</a><ul>
+<li><a class="reference internal" href="#instructions-to-install-makeflow-from-tar-file">Instructions to install Makeflow from tar file:</a></li>
+<li><a class="reference internal" href="#initial-configuration-of-makeflow">Initial configuration of Makeflow:</a></li>
+<li><a class="reference internal" href="#to-run-a-job-through-slurm-with-makeflow">To run a job through SLURM with Makeflow:</a></li>
+<li><a class="reference internal" href="#to-run-a-job-through-work-queue-with-makeflow">To run a job through Work Queue with Makeflow:</a></li>
+<li><a class="reference internal" href="#some-notes-on-makeflow-vs-pegasus">Some notes on Makeflow vs. Pegasus:</a></li>
+<li><a class="reference internal" href="#useful-links">Useful links:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="metacog.html" title="previous chapter">Metacognition</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pegasus.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Austin Allen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/pegasus.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

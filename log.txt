@@ -1,0 +1,104 @@
+5/9: 
+- Installed Python 2.7, numpy, scipy, statsmodel
+- Worked on getting Atmosphere access
+- Started working on improving unit tests
+
+5/10: 
+- Communicated schedule plans
+- Checked to make sure all methods have unit tests that need them
+- Started learning about Atmosphere, installed Putty and VNC Viewer
+- Added unit test for performetrics.prevalence and fixed example code in that method
+
+5/12:
+- Helped Nanxi work on problem of not being able to pull from Git
+- Adjusted comparison data to match different example data
+- Documentation of unit tests
+
+5/16:
+- Helped Elena try to connect to shared drive
+- Read about Pegasus and MakeFlow
+- Got access to Stampede and set it up
+
+5/17:
+- Read and gave feedback on Geoff's posting document
+- Read more about Pegasus and Makeflow
+- Successfully installed Makeflow in Stampede
+- Installed VirtualBox VM in order to be able to run Pegasus tutorial
+- Followed along with Pegasus tutorial in the VM
+- Left off at Catalogs
+
+5/18:
+- Working through and writing out the process of Pegasus and Makeflow in order to be able to compare and contrast them
+- Detailing how Pegasus works
+- Sam's Stampede demonstration
+
+5/19:
+- Detailing how Makeflow works
+- Installing Pegasus on Stampede
+
+5/20:
+- Continue working on compiling workflow compare/contrast summary, setup instructions, helpful links to manuals and tutorials
+
+5/23:
+- Finishing workflow document
+- Discussed Sphinx with Austin
+- Chose new task
+- Added photo to Trello
+- LinkedIn
+- Worked on fixing printer with Austin
+
+5/24:
+- Learned about h-measure
+- Installed rpy2
+- Researching rpy2 to see if that's a valid way to port hmeasure to performetrics
+
+5/26:
+- Researched h-measure, decided it's best to translate method to Python rather than rpy2
+- Installed Citrix to be able to use Matlab in Tealware
+- Learned how to use Matlab to get the h-measure of example data in method
+
+5/27:
+- Installed R and learned some very basic functionality
+- Used R to get the h-measure of example data
+- Incorporated Sam's code into my Python hmeasure and continued working on it
+
+5/31:
+- Finished timesheet
+- Updated LinkedIn
+
+6/1:
+- Talked about Git Shell with Geoff
+- Worked on hmeasure a little bit
+
+
+6/6:
+- Wrote Makefile for example fastLMM
+
+6/7:
+- Working on writing Pegasus scripts for example fastLMM
+- Working with Python trying to get dax generator working 
+
+6/8:
+- Successfully added Pegasus to PYTHONPATH permanently
+- Continued research on Pegasus scripts
+
+6/9:
+- Continued research on Pegasus scripts with Stampede
+- Meeting with Dr. Stapleton
+
+6/13:
+- Cloned/forked new Github repo
+- Working on hmeasure function
+- Figured out some stats stuff with Mary's help
+- Some job searching on LinkedIn
+
+6/15:
+- Worked on hmeasure using scipy/pandas
+
+6/17:
+- Finished rough draft of Pegasus scripts
+
+6/18:
+- Testing and adjusting Pegasus scripts to try to make them work
+- Working on figuring out errors
+- Error "cannot determine condor version"
