@@ -1,0 +1,12 @@
+Needles:
+- Genomic prediction framework
+- Based on MPI using ScaLAPACK and PARDISO libraries
+- Dependencies:
+	- MPI (OpenMPI, MPICH, IntelMPI)
+	- ScaLAPACK and its dependencies BLAS, BLACS, LAPACK, PBLAS
+	- PARDISO (not open source, can get academic license free)
+	- CMake
+- Needs an input file to start. Default input is provided.
+- Outputs three files.
+- Possible difficulties: PARDISO requires a license. ScaLAPACK has its own dependencies.
+
