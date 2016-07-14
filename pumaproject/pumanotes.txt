@@ -1,0 +1,17 @@
+Easy installation example: Puma
+- Neatly wrapped up in a binary with all dependencies included
+- Clear requirements for inputs and formats - makes it easier to write a wrapper
+- Easily usable set of example files for a test script
+
+
+Set up Agave without using Stampede:
+https://github.com/gpcarpen/quicker-start/blob/master/guide.md
+
+Wrapper (template) instructions:
+https://github.com/iPlantCollaborativeOpenSource/cyverse-sdk/blob/master/docs/iplant-first-app-argpass.md
+
+Harder to install something with:
+- Lots of separate dependencies
+
+check tomorrow:
+jobs-status 6932512829747958246-242ac114-0001-007
