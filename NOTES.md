@@ -18,10 +18,8 @@ Install an app on Agave:
 
 [JSON parser](http://jsonlint.com/)
 
-[Puma JSON](https://github.com/ksierrac/Puma/Puma.json)
-
+[Puma JSON](https://github.com/ksierrac/Puma/Puma.json) | 
 [Puma wrapper](https://github.com/ksierrac/Puma/puma_wrapper.sh)
 
-[BayesR JSON](https://github.com/CyVerse-Validate/Stampede-Files/tree/master/bayesR-2.00/bayesR.json)
-
+[BayesR JSON](https://github.com/CyVerse-Validate/Stampede-Files/tree/master/bayesR-2.00/bayesR.json) | 
 [BayesR wrapper](https://github.com/CyVerse-Validate/Stampede-Files/tree/master/bayesR-2.00/wrapper.sh)
