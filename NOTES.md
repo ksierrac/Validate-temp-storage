@@ -1,7 +1,13 @@
-# Most Useful Links
-For using Stampede and Agave
+# Links and notes for using Stampede and Agave
+
+[Validate ReadTheDocs guide](http://validate-10.readthedocs.io/en/latest/index.html)
+
 
 Running a job through parametric launcher: sbatch -n 16 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm 
+
+[Official JSON job submission guide](https://agaveapi.co/documentation/tutorials/job-management-tutorial/)
+
+[User experience test #1 notes - full workflow with fastlmm](https://github.com/ksierrac/Validate-temp-storage/blob/master/UXnotes.txt)
 
 Stampede notes:
 
