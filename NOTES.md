@@ -21,6 +21,9 @@ Stampede notes:
 - [Example sbatch using Agave for BayesR test](https://github.com/ksierrac/Validate-temp-storage/blob/master/readlineex.sh)
 - To use BayesR, run this in the src or bin folder (I had to run it in bin): ifort -O3 -static -openmp -o bayesRv2 RandomDistributions.f90 baymodsv2.f90 bayesRv2.f90 
 
+Useful Linux commands:
+- How many lines in a file: ls output | wc -l
+
 Useful Agave commands:
 - auth-tokens-refresh -S
 - jobs-submit -F test-job.json
