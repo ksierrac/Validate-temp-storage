@@ -19,8 +19,9 @@ Stampede notes:
 - Status: squeue -u username
 - [Example sbatch for Winnow](https://github.com/ksierrac/Validate-temp-storage/tree/master/winnow_ex.sh)
 - [Example sbatch using Agave for BayesR test](https://github.com/ksierrac/Validate-temp-storage/blob/master/readlineex.sh)
+- To use BayesR, run this in the src or bin folder (I had to run it in bin): ifort -O3 -static -openmp -o bayesRv2 RandomDistributions.f90 baymodsv2.f90 bayesRv2.f90 
 
-Agave notes:
+Useful Agave commands:
 - auth-tokens-refresh -S
 - jobs-submit -F test-job.json
 - jobs-status *jobnumber*
@@ -31,6 +32,14 @@ Agave notes:
 - files-list -S data.iplantcollaborative.org remotepath/foldername
 - files-upload -S data.iplantcollaborative.org -F local.file remotepath/foldername
 - apps-addupdate -F localpath/appfilename.json
+- [All Agave commands](https://bitbucket.org/taccaci/foundation-cli/src/1658e797b2cd5ce52d63083141d429f5ec17429d/bin/?at=master)
+
+To fix Agave credentials errors (sometimes):
+- clients-list -v : take note of description for my_client
+- clients-delete my_client
+- clients-create -S -v -N my_client -D "Old description"
+- auth-tokens-create -S -v
+
 
 Submit a job through Agave:
 
