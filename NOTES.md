@@ -3,7 +3,6 @@
 [Validate ReadTheDocs guide](http://validate-10.readthedocs.io/en/latest/index.html)
 
 
-Running a job through parametric launcher: sbatch -n 16 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm 
 
 [Official JSON job submission guide](https://agaveapi.co/documentation/tutorials/job-management-tutorial/)
 
@@ -11,7 +10,9 @@ Running a job through parametric launcher: sbatch -n 16 -t 48:00:00 $TACC_LAUNCH
 
 Stampede notes:
 
-- Automatically looks for a file called paramlist with necessary parameters
+- Running a job through parametric launcher: sbatch -n 16 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm 
+- or sbatch -N 64 -n 128 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm
+- Parametric launcher automatically looks for a file called paramlist with necessary parameters
 - [Table of flags](https://portal.tacc.utexas.edu/user-guides/stampede#running-slurm-jobcontrol-sbatch)
 - Run with a dependency on a previously submitted job: sbatch --dependency=afterok:jobid job_script_name
 - Cancel: scancel jobid
