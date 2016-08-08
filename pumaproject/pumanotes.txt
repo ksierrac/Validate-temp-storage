@@ -1,8 +1,15 @@
-Easy installation example: Puma
-- Neatly wrapped up in a binary with all dependencies included
+Simple installation example: Puma http://mezeylab.cb.bscb.cornell.edu/Software.aspx
+Complex installation examples: Sphinx http://www.cs.cmu.edu/~seunghak/SPHINX/ or Needles https://github.com/arnedc/Needles
+
+Attributes of a simple installation:
+- Application is in the form of a binary executable with all dependencies already included
+- Separate dependencies are few and easily accessible
 - Clear requirements for inputs and formats - makes it easier to write a wrapper
 - Easily usable set of example files for a test script
 
+Puma was relatively simple to install because it is distributed as a single binary file with all dependencies included, has a detailed readme with descriptions of the input requirements
+
+Some useful resources:
 
 Set up Agave without using Stampede:
 https://github.com/gpcarpen/quicker-start/blob/master/guide.md
@@ -10,8 +17,6 @@ https://github.com/gpcarpen/quicker-start/blob/master/guide.md
 Wrapper (template) instructions:
 https://github.com/iPlantCollaborativeOpenSource/cyverse-sdk/blob/master/docs/iplant-first-app-argpass.md
 
-Harder to install something with:
-- Lots of separate dependencies
+JSON generator:
+http://agaveapi.co/tools/app-builder/
 
-check tomorrow:
-jobs-status 6932512829747958246-242ac114-0001-007

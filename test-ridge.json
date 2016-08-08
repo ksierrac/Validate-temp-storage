@@ -1,0 +1,17 @@
+{
+    "jobName": "ridge-test-1",
+    "softwareName": "RidgePredict-1.0",
+    "processorsPerNode": 16,
+    "requestedTime": "01:00:00",
+    "memoryPerNode": 32,
+    "nodeCount": 1,
+    "batchQueue": "serial",
+    "archive": false,
+    "archivePath": "",
+    "inputs": {
+        "inputPed": "agave://data.iplantcollaborative.org/ksierrac/applications/test-ridge.ped"
+    },
+    "parameters":{
+        "outputPed": "ridge-test-output.ped"
+    }
+}

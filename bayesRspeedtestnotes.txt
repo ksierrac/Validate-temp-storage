@@ -1,0 +1,5 @@
+sbatch -n 32 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm 
+sbatch -N 64 -n 128 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm
+$HOME/applications/bayesR-master/src/bayesR paramlist
+
+22:25:00 running 333 jobs on 64 nodes
