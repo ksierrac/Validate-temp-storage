@@ -1,0 +1,9 @@
+{
+  "jobName": "testAlphaSim",
+  "softwareName": "AlphaSimb-1.04",
+  "requestedTime": "05:00:00",
+  "archive": true,
+  "inputs":{
+    "specificationFile": "agave://data.iplantcollaborative.org/ksierrac/alphasimparam.txt"
+          }
+    }
