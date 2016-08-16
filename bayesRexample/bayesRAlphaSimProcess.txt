@@ -21,9 +21,6 @@ python $WORK/Validate/CurrentReleaseStable/Util_1/Merger/merge.py --output Alpha
 - Use Plink to get bed/bim/fam:
 $WORK/Validate/CurrentReleaseStable/GWAS_1/plink --file AlphaSim_Example --out AlphaSim_Example --make-bed
 
-- Submit:
-sbatch -N 4 -n 8 -t 48:00:00 $TACC_LAUNCHER_DIR/launcher.slurm
-
 {
 "jobName": "testBayesRAlpha",
 "softwareName": "bayesR-2.00u1",
