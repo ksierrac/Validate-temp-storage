@@ -1,0 +1,16 @@
+{
+    "jobName": "testBayesRAlpha4Nodes",
+    "softwareName": "bayesR-2.00u1",
+    "archive": true,
+    "processorsPerNode": 8,
+    "requestedTime": "48:00:00",
+    "nodeCount": 4,
+    "inputs":{
+        "inputBED": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.bed",
+        "inputBIM": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.bim",
+        "inputFAM": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.fam"
+    },
+    "parameters":{
+        "output": "alpha_results"
+    }
+}

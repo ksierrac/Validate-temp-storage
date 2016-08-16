@@ -1,0 +1,16 @@
+Get AlphaSim data ready to use for bayesR:
+
+- Run AlphaSim:
+https://github.com/ksierrac/Validate-temp-storage/blob/master/bayesRexample/bayesRAlphaSim/runAlphaSim.json
+
+- Script to retrieve all AlphaSim results from data store (modify archive path):
+https://github.com/ksierrac/Validate-temp-storage/blob/master/bayesRexample/bayesRAlphaSim/getAlpha.sh
+
+- Merge results into PED/MAP:
+python $WORK/Validate/CurrentReleaseStable/Util_1/Merger/merge.py --output AlphaSim_Example alphasim --snp SimulatedData/Chip1SnpInformation.txt --pedigree SimulatedData/PedigreeTbvTdvTpv.txt --gender SimulatedData/Gender.txt --geno SimulatedData/AllIndividualsSnpChips/Chip1Genotype.txt --sol Selection/SelectionFolder1/SnpSolutions.txt
+
+- Use Plink to get bed/bim/fam:
+$WORK/Validate/CurrentReleaseStable/GWAS_1/plink --file AlphaSim_Example --out AlphaSim_Example --make-bed
+
+- Run job through Agave:
+https://github.com/ksierrac/Validate-temp-storage/blob/master/bayesRexample/bayesRAlphaSim/bayesRAlphaJob.json
