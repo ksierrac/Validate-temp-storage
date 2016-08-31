@@ -1,5 +1,5 @@
 {
-    "jobName": "puma-test-1",
+    "jobName": "puma-test",
     "softwareName": "Puma-1.0",
     "processorsPerNode": 16,
     "requestedTime": "01:00:00",
@@ -9,12 +9,12 @@
     "archive": true,
     "archivePath": "",
     "inputs": {
-        "tped": "agave://data.iplantcollaborative.org/ksierrac/applications/PumaDistribution/data/X_test.tped",
-                "tfam": "agave://data.iplantcollaborative.org/ksierrac/applications/PumaDistribution/data/X_test.tfam"
+        "tped": "agave://data.iplantcollaborative.org/USERNAME/TPEDPATH.tped",
+        "tfam": "agave://data.iplantcollaborative.org/USERNAME/TFAMPATH.tfam"
     },
     "parameters":{
         "regression": "LINEAR",
         "penalty":"LASSO",
-                "name":"try1again"
+        "name":"try1"
     }
 }
