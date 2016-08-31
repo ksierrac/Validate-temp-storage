@@ -4,10 +4,10 @@ https://github.com/CyVerse-Validate/Stampede-Files/blob/master/Puma/test-job.jso
 Inputs:
 tped (required)          [genotype data in plink TPED format]
 tfam  (required)         [phenotype (and sex) data in plink TFAM format]
-sex            			 [if tfam is used, this includes sex as a covariate]
-covariates     			 [file storing matrix with each column being a covariate]
+sex            		 [if tfam is used, this includes sex as a covariate]
+covariates     		 [file storing matrix with each column being a covariate]
 regression (required)    [specify regression model as either LINEAR or LOGISTIC]
-sma            			 [if set, performs only standard single marker analysis]
+sma            		 [if set, performs only standard single marker analysis]
 penalty (required)       [space delimited list of methods to run, select from:
 							LASSO ALASSO LOG NEG MCP VBAY]
 name (required)      	 [name to be appended to results files]
