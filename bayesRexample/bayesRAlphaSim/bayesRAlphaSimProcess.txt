@@ -1,9 +1,9 @@
 Get AlphaSim data ready to use for bayesR:
 
-- Run AlphaSim:
+- Example of running AlphaSim:
 https://github.com/ksierrac/Validate-temp-storage/blob/master/bayesRexample/bayesRAlphaSim/runAlphaSim.json
 
-- Script to retrieve all AlphaSim results from data store (modify archive path):
+- Example of a bash script to retrieve all AlphaSim results from data store (modify archive path):
 https://github.com/ksierrac/Validate-temp-storage/blob/master/bayesRexample/bayesRAlphaSim/getAlpha.sh
 
 - Merge results into PED/MAP:

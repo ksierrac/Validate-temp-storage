@@ -6,7 +6,7 @@
     "memoryPerNode": 32,
     "nodeCount": 1,
     "batchQueue": "serial",
-    "archive": false,
+    "archive": true,
     "archivePath": "",
     "inputs": {
         "genotype_input": "agave://data.iplantcollaborative.org/ksierrac/applications/PumaDistribution/data/X_test.tped",

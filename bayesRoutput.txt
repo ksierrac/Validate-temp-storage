@@ -1,0 +1,27 @@
+model not set
+freq not set
+param not set
+n not set
+vara not set
+vare not set
+dfvara is set to -2.5
+dfvare is set to -2.5
+delta not set
+msize not set
+mrep not set
+numit not set
+burnin not set
+thin not set
+ndist not set
+gpins is set to 0.0,0.1,0.01,0.001
+seed not set
+predict not set
+snpout not set
+permute not set
+blocksize not set
+nthreads not set
+shuffle not set
+Argument Line:
+./bayesRv2 -out testdfvara_results -bfile AlphaSim_Example -dfvara -2.5 -dfvare -2.5 -gpin 0.0,0.1,0.01,0.001
+Starting bayesRv2
+ Missing argumnet for :-dfvara           5

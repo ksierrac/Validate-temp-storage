@@ -1,0 +1,20 @@
+{
+    "jobName": "testdfvara",
+    "softwareName": "bayesR-2.00u1",
+    "archive": true,
+    "processorsPerNode": 8,
+    "requestedTime": "02:00:00",
+    "nodeCount": 4,
+    "inputs":{
+        "inputBED": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.bed",
+        "inputBIM": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.bim",
+        "inputFAM": "agave://data.iplantcollaborative.org/ksierrac/AlphaSim_Example.fam"
+    },
+    "parameters":{
+        "output": "testdfvara_results",
+                "dfvara": "-2.5",
+                "dfvare": "-2.5",
+                "gpin": [0.0,0.1,0.01,0.001]
+    }
+}
+

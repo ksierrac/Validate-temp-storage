@@ -19,7 +19,7 @@
   "testPath": "puma_test.sh",
   "inputs": [
     {
-      "id": "genotype_input",
+      "id": "tped",
       "details": {
         "label": "Genotype TPED",
         "description": "Puma takes genotypes in the widely used TPED format of Plink and genotypes must be coded as 1 or 2. Convert a Plink genotype file to this format using options: --transpose --recode12",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "phenotype_input",
+      "id": "tfam",
       "details": {
         "label": "Phenotype TFAM",
         "description": "Phenotype data and sex data are read from TFAM files generated with Plink options",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "id": "covariate_input",
+      "id": "covariates",
       "details": {
         "label": "Covariate TXT",
         "description": "Covariates are stored in a text file where each row is an individual and each space-delimited column is a covariate. A mean term is included by default.",
@@ -73,7 +73,7 @@
   ],
   "parameters": [
     {
-      "id": "sexOption",
+      "id": "sex",
       "details": {
         "label": "Sex Covariate",
         "description": "If --tfam is used, this includes sex as a covariate.",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "id": "regressionModel",
+      "id": "regression",
       "details": {
         "label": "Regression Model",
         "description": "Specify regression model as either LINEAR or LOGISTIC.",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": "singleMarker",
+      "id": "sma",
       "details": {
         "label": "Single Marker Analysis",
         "description": "If set, performs only standard single marker analysis.",
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "penaltyMethods",
+      "id": "penalty",
       "details": {
         "label": "Penalty Methods to Run",
         "description": "Space delimited list of methods to run, select from: LASSO ALASSO LOG NEG MCP VBAY.",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "id": "resultsName",
+      "id": "name",
       "details": {
         "label": "Name for Results",
         "description": "Name to be appended to results files.",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "id": "pScreen",
+      "id": "screen_p_value",
       "details": {
         "label": "Screen P Value",
         "description": "Marginal p-values below which markers are passed to method.",
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "pmlRestart",
+      "id": "pML_restarts",
       "details": {
         "label": "pML Restarts",
         "description": "Number of posterior modes explored.",
@@ -180,7 +180,7 @@
       }
     },
     {
-      "id": "resultsFolder",
+      "id": "results",
       "details": {
         "label": "Results Folder",
         "description": "Specify folder where results are saved. Defaults to local folder.",
@@ -210,7 +210,7 @@
       }
     },
     {
-      "id": "restrictedPath",
+      "id": "restrictedPathSearch",
       "details": {
         "label": "Restricted path search",
         "description": "1 dimensional path search for non-convex penalties.",
