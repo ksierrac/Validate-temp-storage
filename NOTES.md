@@ -20,6 +20,7 @@ Stampede notes:
 - [Example sbatch for Winnow](https://github.com/ksierrac/Validate-temp-storage/tree/master/winnow_ex.sh)
 - [Example sbatch using Agave for BayesR test](https://github.com/ksierrac/Validate-temp-storage/blob/master/readlineex.sh)
 - To use BayesR, run this in the src or bin folder (I had to run it in bin): ifort -O3 -static -openmp -o bayesRv2 RandomDistributions.f90 baymodsv2.f90 bayesRv2.f90 
+- [Simulate instructions](https://github.com/CyVerse-Validate/Quickstart-Guide/blob/master/docs/Simulate.md)
 
 Useful Linux commands:
 - How many lines in a file: ls output | wc -l
